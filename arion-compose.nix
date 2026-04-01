@@ -3,9 +3,10 @@
   project.name = "webapp";
   services = {
     webserver = {
-      service.image = "nginx:alpine";
+      service.image = "webapp:local";
+      service.build.context = "./app";
       service.ports = [
-        "8080:80" # host:container
+        "8080:8000" # host:container
       ];
     };
   };
